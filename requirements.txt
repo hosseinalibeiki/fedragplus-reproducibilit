@@ -1,0 +1,15 @@
+# Minimal dependencies for Fed-RAG+ reproducibility
+pyyaml
+numpy
+pandas
+tqdm
+scikit-learn
+sentence-transformers
+faiss-cpu
+torch
+transformers
+accelerate
+peft
+matplotlib
+py7zr
+mwparserfromhell

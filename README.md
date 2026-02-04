@@ -94,19 +94,20 @@ This repo is designed to **rebuild data locally**. Do not commit raw dumps to Gi
 Wikimedia dumps (choose one snapshot date and keep it fixed in configs):
 - Example (replace date as needed):
 ```bash
-wget https://dumps.wikimedia.org/enwiki/20240101/enwiki-20240101-pages-articles.xml.bz2
+wget https://dumps.wikimedia.org/enwiki/20251020/enwiki-20251020-pages-articles-multistream-index.txt.bz2
 ```
 
 ### PubMed
 NCBI PubMed baseline:
 ```bash
-wget https://ftp.ncbi.nlm.nih.gov/pubmed/baseline/pubmed24n0001.xml.gz
+wget https://ftp.ncbi.nlm.nih.gov/pubmed/baseline/pubmed26n0002.xml.gz
 # repeat for multiple baseline files if desired
 ```
 
 ### StackExchange
 Use Internet Archive StackExchange dumps:
 ```bash
+wget https://archive.org/download/stackexchange/ai.stackexchange.com.7z
 # Large collection; download only what you need
 # You can download specific communities (e.g., stackoverflow.com) via archive.org
 ```

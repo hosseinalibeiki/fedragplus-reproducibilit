@@ -1,0 +1,14 @@
+include:
+  - base.yaml
+  - train_common.yaml
+
+method:
+  name: "centralized_rag"
+
+federated:
+  rounds: 1
+  local_epochs: 1
+  client_fraction: 1.0
+
+centralized:
+  enabled: true

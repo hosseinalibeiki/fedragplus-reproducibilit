@@ -1,0 +1,23 @@
+include:
+  - base.yaml
+  - train_common.yaml
+
+method:
+  name: "fedprox_rag"
+
+fedprox:
+  enabled: true
+  mu: 0.001
+
+regularizers:
+  kl:
+    enabled: true
+    lambda_kl: 0.03
+    temperature: 1.0
+  attribution:
+    enabled: false
+  anchor:
+    enabled: false
+
+trust:
+  enabled: false

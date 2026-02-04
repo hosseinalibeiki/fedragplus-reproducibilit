@@ -1,0 +1,27 @@
+include:
+  - base.yaml
+  - train_common.yaml
+
+method:
+  name: "fedragplus"
+
+regularizers:
+  kl:
+    enabled: true
+    lambda_kl: 0.05
+    temperature: 1.0
+  attribution:
+    enabled: true
+    lambda_attr: 0.02
+    method: "simple_token_importance"  # we will implement a label-free, deterministic version
+  anchor:
+    enabled: true
+    lambda_anchor: 0.01
+
+trust:
+  enabled: true
+  smoothing: 0.6          # EMA for stability
+  clip_min: 0.05
+  clip_max: 1.0
+  # IMPORTANT: this is a placeholder until we implement trust_score.py in a reproducible way
+  score_mode: "retrieval_consistency"

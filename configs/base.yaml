@@ -1,0 +1,48 @@
+project:
+  name: fed-rag-plus
+  seed: 42
+  output_dir: results
+
+data:
+  snapshot:
+    wikipedia: "2025-10-20"
+    pubmed: "pubmed26n0002 (baseline)"
+    stackexchange: "ai.stackexchange.com (archive.org stackexchange)"
+  raw_paths:
+    wikipedia_multistream_xml_bz2: "/path/to/enwiki-20251020-pages-articles-multistream.xml.bz2"
+    wikipedia_multistream_index_bz2: "/path/to/enwiki-20251020-pages-articles-multistream-index.txt.bz2"
+    pubmed_xml_gz: "/path/to/pubmed26n0002.xml.gz"
+    stackexchange_7z: "/path/to/ai.stackexchange.com.7z"
+  chunking:
+    chunk_tokens: 384
+    overlap_tokens: 50
+    min_chars: 200
+  clients:
+    num_clients: 4
+    docs_per_client: 22000
+    non_iid:
+      type: zipf
+      zipf_alpha: 1.2
+
+poisoning:
+  enabled: true
+  poisoned_client_id: 4
+  poison_rate: 0.20
+  poison_type: "shuffle_or_offtopic"
+  seed: 42
+
+retrieval:
+  top_k: 5
+  max_input_tokens: 2048
+  embedder:
+    name: "sentence-transformers/all-MiniLM-L6-v2"
+    normalize_embeddings: true
+  faiss:
+    index_type: "FlatIP"
+
+federated:
+  rounds: 20
+  local_epochs: 2
+  client_fraction: 1.0
+
+

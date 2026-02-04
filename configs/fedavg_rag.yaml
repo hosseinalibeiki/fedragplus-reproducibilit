@@ -1,0 +1,17 @@
+include:
+  - base.yaml
+  - train_common.yaml
+
+method:
+  name: "fedavg_rag"
+
+regularizers:
+  kl:
+    enabled: false
+  attribution:
+    enabled: false
+  anchor:
+    enabled: false
+
+trust:
+  enabled: false

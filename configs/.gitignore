@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+data_out/
+federated_data/
+indexes/
+results/
+*.log
+.DS_Store
